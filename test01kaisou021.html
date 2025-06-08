@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>訃報通知の文書作成</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .pattern {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 30px 0;
+      padding: 20px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .pattern h2 {
+      color: #005a9c;
+    }
+    .section {
+      margin-top: 15px;
+    }
+    .section a {
+      font-weight: bold;
+      color: #007acc;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .section a:hover {
+      text-decoration: underline;
+    }
+    video {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .button-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007acc;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .button-link:hover {
+      background-color: #005a9c;
+    }
+  </style>
+</head>
+<body>
+  <h1>訃報通知の文書作成</h1>
+
+  <!-- パターン1 -->
+   <div class="pattern">
+    <h2>パターン1：通夜・葬儀ともに人を招く場合</h2>
+
+     <div class="section">
+      <a onclick="document.getElementById('video1').style.display='block'">① 文書作成の解説動画</a>
+      <p>＜通夜もお葬式も行う場合のプロンプトの作り方を2分程度の動画で解説します。＞</p>
+      <video id="video1" style="display:none;" controls>
+        <source src="pattern1_guide.mp4" type="video/mp4">
+        この動画は再生できません。
+      </video>
+    </div>
+
+      <div class="section">
+        <h3>②　プロンプトの作成</h3>
+        <a class="button-link"href="test01kaisou031.html">プロンプトを作成する</a>
+      </div>
+
+    <div class="section">
+      <a onclick="document.getElementById('video2').style.display='block'">③ ChatGPTを使った文書作成の動画</a>
+      <video id="video2" style="display:none;" controls>
+        <source src="pattern1_chatgpt_guide.mp4" type="video/mp4">
+        この動画は再生できません。
+      </video>
+    </div>
+
+    <div class="section">
+      <h3>④ ChatGPTを利用して文書を作成する</h3>
+      <a class="button-link" href="https://chat.openai.com" target="_blank">ChatGPTで作成</a>
+    </div>
+  </div>
+
+  <!-- パターン2 -->
+  <div class="pattern">
+    <h2>パターン2：通夜は招き、葬儀は家族のみで行う場合</h2>
+
+    <div class="section">
+      <a onclick="document.getElementById('video3').style.display='block'">① 文書作成の解説動画</a>
+      <p>＜通夜には人を呼び、葬儀は近親者のみで行う場合の文書の作り方＞</p>
+      <video id="video3" style="display:none;" controls>
+        <source src="pattern2_guide.mp4" type="video/mp4">
+        この動画は再生できません。
+      </video>
+    </div>
+
+    <div class="section">
+      <h3>② プロンプトの作成</h3>
+      <a class="button-link" href="prompt2.html">プロンプトを作成する</a>
+    </div>
+
+    <div class="section">
+      <a onclick="document.getElementById('video4').style.display='block'">③ ChatGPTを使った文書作成の動画</a>
+      <video id="video4" style="display:none;" controls>
+        <source src="pattern2_chatgpt_guide.mp4" type="video/mp4">
+        この動画は再生できません。
+      </video>
+    </div>
+
+    <div class="section">
+      <h3>④ ChatGPTを利用して文書を作成する</h3>
+      <a class="button-link" href="https://chat.openai.com" target="_blank">ChatGPTで作成</a>
+    </div>
+  </div>
+
+  <!-- パターン3 -->
+  <div class="pattern">
+    <h2>パターン3：ゼロから文書を作る場合</h2>
+
+    <div class="section">
+      <a onclick="document.getElementById('video5').style.display='block'">① 文書作成の解説動画</a>
+      <p>＜定型文がない場合に、必要情報を入力して文書を一から作る方法の動画＞</p>
+      <video id="video5" style="display:none;" controls>
+        <source src="pattern3_guide.mp4" type="video/mp4">
+        この動画は再生できません。
+      </video>
+    </div>
+
+    <div class="section">
+      <h3>② プロンプトの作成</h3>
+      <a class="button-link" href="prompt3.html">プロンプトを作成する</a>
+    </div>
+
+    <div class="section">
+      <a onclick="document.getElementById('video6').style.display='block'">③ ChatGPTを使った文書作成の動画</a>
+      <video id="video6" style="display:none;" controls>
+        <source src="pattern3_chatgpt_guide.mp4" type="video/mp4">
+        この動画は再生できません。
+      </video>
+    </div>
+
+    <div class="section">
+      <h3>④ ChatGPTを利用して文書を作成する</h3>
+      <a class="button-link" href="https://chat.openai.com" target="_blank">ChatGPTで作成</a>
+    </div>
+  </div>
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="index.html" class="button-link">← 前の画面に戻る</a>
+    </div>
+</body>
+</html>

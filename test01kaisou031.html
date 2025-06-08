@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>訃報通知プロンプト作成</title>
+</head>
+<body>
+  <h2>訃報通知プロンプト作成フォーム</h2>
+  <form id="obituaryForm">
+    <label>故人氏名：<input type="text" name="name" required></label><br><br>
+    <label>逝去日時：<input type="text" name="death" required></label><br><br>
+    <label>通夜日時：<input type="text" name="wakeDate" required></label><br><br>
+    <label>通夜会場：<input type="text" name="wakePlace" required></label><br><br>
+    <label>葬儀日時：<input type="text" name="funeralDate" required></label><br><br>
+    <label>葬儀会場：<input type="text" name="funeralPlace" required></label><br><br>
+    <label>住所：<input type="text" name="address" required></label><br><br>
+    <label>喪主氏名：<input type="text" name="mourner" required></label><br><br>
+    <label>喪主連絡先：<input type="text" name="contact" required></label><br><br>
+    <label>備考：<input type="text" name="note"></label><br><br>
+    <label>町内会長名：<input type="text" name="mayor" required></label><br><br>
+    <label>日付（例：令和7年5月17日）：<input type="text" name="date" required></label><br><br>
+    <button type="button" onclick="generatePrompt()">プロンプト生成</button>
+  </form>
+
+  <h3>生成されたプロンプト：</h3>
+  <textarea id="output" rows="20" cols="80"></textarea>
+
+  <script>
+    function generatePrompt() {
+      const form = document.getElementById('obituaryForm');
+      const data = new FormData(form);
+      const prompt = `(ChatGPTを立ち上げて、プロンプトに定型のWordをドラッグアンドドロップしてください。その後、下記の文書をコピー＆ペーストしてください。）
+私は町内会の役員をしています。
+貼り付けたWordの文書のフォーマットで訃報のお知らせを作って下さい。
+ただし、下記の事項については置換してください。
+――――――――――――――
+■ 故人：${data.get("name")}
+■ 逝去日時：${data.get("death")}
+■ 通夜：
+   日時：${data.get("wakeDate")}
+   会場：${data.get("wakePlace")}
+■ 葬儀（告別式）：
+   日時：${data.get("funeralDate")}
+   会場：${data.get("funeralPlace")}
+■ 住所：${data.get("address")}
+■ 喪主：${data.get("mourner")}（連絡先：${data.get("contact")}）
+■ 備考：${data.get("note")}
+――――――――――――――
+
+敬具
+${data.get("date")}
+町内会長　${data.get("mayor")}`;
+
+      document.getElementById('output').value = prompt;
+    }
+  </script>
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="test01kaisou021.html" style="padding: 10px 50px; background-color: #ccc; text-decoration: none; border-radius: 5px;">← 前の画面に戻る</a>
+    </div>
+</body>
+</html>
